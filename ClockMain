@@ -1,0 +1,22 @@
+# Import modules from tkinter
+from tkinter import *
+from tkinter.ttk import *
+# Imports the time module from strftime
+from time import strftime
+
+root = Tk()
+root.title("Clock")
+
+# Makes a function called time
+def time():
+    string = strftime('%H:%M:%S %p')
+    Label.config(text=string)
+    Label.after(1000, time)
+
+# Adds the clock and the time to the root
+Label = Label(root, font=("Blackgrounds", 80), background = "white", foreground = "black")
+Label.pack(anchor='center')
+time()
+
+# Window always runs until the user closes it.
+mainloop()
